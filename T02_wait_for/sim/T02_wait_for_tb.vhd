@@ -8,7 +8,7 @@ entity T02_wait_for_tb is
       begin
           -- This is the start of the process "thread"
    
-          report "Peekaboo!";
+          report "Peekboo!";
    
           wait for 10 ns;
    
