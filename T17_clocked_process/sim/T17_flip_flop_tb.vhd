@@ -6,6 +6,9 @@ entity T17_flip_flop_tb is
 end entity;
   
 architecture sim of T17_flip_flop_tb is
+
+    constant clk_frequency : integer := 100e6;
+    constant clk_period    : time    := 1000 ms / clk_frequency;
  
     signal clk   : std_logic := '1';
     signal rst_n : std_logic := '0';
@@ -22,11 +25,13 @@ begin
         dout  => dout
       );
   
-    CLK_PROC : process is 
-    begin 
-      wait for 10 ns;
-      clk <= not clk;
-    end process CLK_PROC;
+    clk <= not clk after clk_period / 2;
+
+    -- CLK_PROC : process is 
+    -- begin 
+    --   wait for 5 ns;
+    --   clk <= not clk;
+    -- end process CLK_PROC;
   
     STIM_PROC : process is 
     begin 

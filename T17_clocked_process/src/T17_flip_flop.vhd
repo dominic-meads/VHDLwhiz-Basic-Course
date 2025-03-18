@@ -28,6 +28,6 @@ begin
     end if;
   end process;
 
-  dout <= r_dout; 
+  dout <= r_dout;
 
 end architecture;
